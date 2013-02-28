@@ -1,4 +1,4 @@
-vaadin-playground
+vaadin7-playground
 =================
 
 vaadin stuff

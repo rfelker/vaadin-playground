@@ -2,6 +2,7 @@ package de.codecentric.testproject;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.google.gwt.thirdparty.guava.common.collect.SetMultimap;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -25,6 +26,7 @@ public class MyVaadinUI extends UI
     @Override
     protected void init(VaadinRequest request) {
     	final VerticalLayout layout = new VerticalLayout();
+    	layout.setMargin(true);
         setContent(layout);
         
         Button button = new Button("Click Me");

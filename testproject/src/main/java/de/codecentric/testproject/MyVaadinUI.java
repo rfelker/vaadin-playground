@@ -2,7 +2,6 @@ package de.codecentric.testproject;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.google.gwt.thirdparty.guava.common.collect.SetMultimap;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -15,27 +14,26 @@ import com.vaadin.ui.VerticalLayout;
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
-public class MyVaadinUI extends UI
-{
+public class MyVaadinUI extends UI {
 
-    @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "de.codecentric.testproject.AppWidgetSet")
-    public static class Servlet extends VaadinServlet {
-    }
+	@WebServlet(value = "/*", asyncSupported = true)
+	@VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "de.codecentric.testproject.AppWidgetSet")
+	public static class Servlet extends VaadinServlet {
+	}
 
-    @Override
-    protected void init(VaadinRequest request) {
-    	final VerticalLayout layout = new VerticalLayout();
-    	layout.setMargin(true);
-        setContent(layout);
-        
-        Button button = new Button("Click Me");
-        button.addClickListener(new Button.ClickListener() {
-            public void buttonClick(ClickEvent event) {
-                layout.addComponent(new Label("Thank you for clicking"));
-            }
-        });
-        layout.addComponent(button);
-    }
+	@Override
+	protected void init(VaadinRequest request) {
+		final VerticalLayout layout = new VerticalLayout();
+		layout.setMargin(true);
+		setContent(layout);
+
+		Button button = new Button("Click Me");
+		button.addClickListener(new Button.ClickListener() {
+			public void buttonClick(ClickEvent event) {
+				layout.addComponent(new Label("Thank you for clicking"));
+			}
+		});
+		layout.addComponent(button);
+	}
 
 }

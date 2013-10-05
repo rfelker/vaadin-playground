@@ -17,7 +17,7 @@ import com.vaadin.server.SessionInitListener;
 import com.vaadin.server.VaadinServlet;
 
 @WebServlet(value = "/*", asyncSupported = true)
-@VaadinServletConfiguration(heartbeatInterval = 3, productionMode = false, ui = MyVaadinUI.class, widgetset = "de.codecentric.testproject.AppWidgetSet")
+@VaadinServletConfiguration(heartbeatInterval = 300, closeIdleSessions = true, productionMode = false, ui = MyVaadinUI.class, widgetset = "de.codecentric.testproject.AppWidgetSet")
 public class MyServlet extends VaadinServlet implements SessionInitListener,
 		SessionDestroyListener, BootstrapListener {
 
@@ -30,6 +30,7 @@ public class MyServlet extends VaadinServlet implements SessionInitListener,
 
 		getService().addSessionInitListener(this);
 		getService().addSessionDestroyListener(this);
+		getService().setSystemMessagesProvider(new MySystemMessageProvider());
 	}
 
 	@Override

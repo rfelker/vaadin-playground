@@ -40,6 +40,17 @@ public class MyVaadinUI extends UI implements DetachListener, AttachListener {
 			}
 		});
 		layout.addComponent(button);
+
+		Button logout = new Button("Logout");
+		logout.addClickListener(new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getPage().setLocation("http://www.codecentric.de");
+				getSession().close();
+			}
+		});
+		layout.addComponent(logout);
+
 		Page page = Page.getCurrent();
 
 		File baseDirectory = VaadinService.getCurrent().getBaseDirectory();

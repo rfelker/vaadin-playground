@@ -1,11 +1,15 @@
 package de.codecentric.testproject;
 
-import javax.servlet.annotation.WebServlet;
+import java.io.File;
+import java.util.logging.Logger;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
-import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.server.ClientConnector.AttachListener;
+import com.vaadin.server.ClientConnector.DetachListener;
+import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinServlet;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
@@ -14,17 +18,19 @@ import com.vaadin.ui.VerticalLayout;
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
-public class MyVaadinUI extends UI {
-
-	@WebServlet(value = "/*", asyncSupported = true)
-	@VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "de.codecentric.testproject.AppWidgetSet")
-	public static class Servlet extends VaadinServlet {
-	}
+@PreserveOnRefresh
+public class MyVaadinUI extends UI implements DetachListener, AttachListener {
+	private static final Logger LOGGER = Logger.getLogger(MyVaadinUI.class.getName());
 
 	@Override
 	protected void init(VaadinRequest request) {
+		addDetachListener(this);
+		addAttachListener(this);
+
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
+		layout.setSizeFull();
+		layout.setCaption("my caption");
 		setContent(layout);
 
 		Button button = new Button("Click Me");
@@ -34,6 +40,25 @@ public class MyVaadinUI extends UI {
 			}
 		});
 		layout.addComponent(button);
+		Page page = Page.getCurrent();
+
+		File baseDirectory = VaadinService.getCurrent().getBaseDirectory();
+
+		if (baseDirectory != null) {
+			LOGGER.info("baseDir=" + baseDirectory.getAbsolutePath());
+		} else {
+			LOGGER.info("baseDir=null");
+		}
 	}
 
+	@Override
+	public void detach(DetachEvent event) {
+		LOGGER.info("UI detach, event=" + event);
+	}
+
+	@Override
+	public void attach(AttachEvent event) {
+		LOGGER.info("UI attach, event=" + event);
+
+	}
 }

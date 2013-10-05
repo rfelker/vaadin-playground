@@ -45,7 +45,7 @@ public class MyVaadinUI extends UI implements DetachListener, AttachListener {
 		logout.addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getPage().setLocation("http://www.codecentric.de");
+				getUI().getPage().setLocation("/testproject/logout.html");
 				getSession().close();
 			}
 		});

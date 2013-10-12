@@ -1,0 +1,78 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1383" measuredH="1035" mockupW="1280" mockupH="1024">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="103" y="11" w="1280" h="1024" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::LinkBar" x="656" y="972" w="-1" h="-1" measuredW="174" measuredH="19" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kontakt%2C%20Impressum%2C%20AGB</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::VRule" x="207" y="96" w="-1" h="895" measuredW="10" measuredH="100" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::IconLabel" x="128" y="96" w="-1" h="-1" measuredW="64" measuredH="79" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>HomeMobileIcon%7Cxlarge</icon>
+        <text>Company</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::IconLabel" x="128" y="210" w="-1" h="-1" measuredW="64" measuredH="79" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>BloggerIcon%7Cxlarge</icon>
+        <text>Section%201</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::HRule" x="113" y="175" w="90" h="-1" measuredW="100" measuredH="10" zOrder="5" locked="false" isInGroup="-1"/>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::IconLabel" x="128" y="304" w="-1" h="-1" measuredW="64" measuredH="79" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Cxlarge</icon>
+        <text>Section%202</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::IconLabel" x="128" y="398" w="-1" h="-1" measuredW="64" measuredH="79" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ClockIcon%7Cxlarge</icon>
+        <text>Section%203</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="__group__" x="113" y="915" w="90" h="77" measuredW="90" measuredH="77" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="0" w="90" h="-1" measuredW="100" measuredH="10" zOrder="0" locked="false" isInGroup="14"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::IconLabel" x="9" y="17" w="-1" h="-1" measuredW="70" measuredH="21" zOrder="1" locked="false" isInGroup="14">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>GearIcon%7Cxsmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Settings</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::IconLabel" x="11" y="56" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="2" locked="false" isInGroup="14">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>XIcon%7Cxsmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>Logout</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::IconLabel" x="11" y="38" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="3" locked="false" isInGroup="14">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <icon>ContactIcon%7Cxsmall</icon>
+            <labelPosition>right</labelPosition>
+            <text>User</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::TabBar" x="217" y="96" w="1151" h="870" measuredW="263" measuredH="100" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <size>20</size>
+        <tabHPosition>left</tabHPosition>
+        <text>One%2C%20Two%2C%20Three%2C%20Four</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

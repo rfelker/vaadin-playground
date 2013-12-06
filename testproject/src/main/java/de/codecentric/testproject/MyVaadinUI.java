@@ -8,18 +8,17 @@ import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.ClientConnector.AttachListener;
 import com.vaadin.server.ClientConnector.DetachListener;
-import com.vaadin.server.ExternalResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.Link;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import de.codecentric.testproject.ui.Footer;
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
@@ -58,7 +57,7 @@ public class MyVaadinUI extends UI implements DetachListener, AttachListener {
 
 		rightArea.addComponent(tabSheet);
 		rightArea.setExpandRatio(tabSheet, 1);
-		rightArea.addComponent(createFooter());
+		rightArea.addComponent(new Footer());
 
 	}
 
@@ -99,36 +98,6 @@ public class MyVaadinUI extends UI implements DetachListener, AttachListener {
 			tabLayout.setSizeFull();
 			tabSheet.addTab(tabLayout, "Tab " + (i + 1));
 		}
-	}
-
-	private Component createFooter() {
-		HorizontalLayout footerLayout = new HorizontalLayout();
-		footerLayout.setMargin(false);
-		footerLayout.setSizeFull();
-		footerLayout.setHeight(30, Unit.PIXELS);
-
-		HorizontalLayout linkLayout = new HorizontalLayout();
-		linkLayout.setSizeFull();
-		linkLayout.setMargin(false);
-		linkLayout.setSpacing(true);
-
-		footerLayout.addComponent(new Link()); // dummy
-		footerLayout.addComponent(linkLayout);
-		footerLayout.addComponent(new Link());// dummy
-
-		ExternalResource resource = new ExternalResource("http://www.codecentric.de");
-		Link contactLink = new Link("Contact", resource);
-		Link aboutLink = new Link("About us", resource);
-		Link couLink = new Link("Conditions of Use", resource);
-
-		linkLayout.addComponent(contactLink);
-		linkLayout.setComponentAlignment(contactLink, Alignment.MIDDLE_CENTER);
-		linkLayout.addComponent(aboutLink);
-		linkLayout.setComponentAlignment(aboutLink, Alignment.MIDDLE_CENTER);
-		linkLayout.addComponent(couLink);
-		linkLayout.setComponentAlignment(couLink, Alignment.MIDDLE_CENTER);
-
-		return footerLayout;
 	}
 
 	@Override
